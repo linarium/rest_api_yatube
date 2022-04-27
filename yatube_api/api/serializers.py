@@ -45,7 +45,7 @@ class FollowSerializer(serializers.ModelSerializer):
         """
         Checking actions with the subscription function:
         User can't subscribe on himself
-        User can't follow twice the same user
+        User can't follow twice the same user.
         """
         if self.context['request'].user == value:
             raise serializers.ValidationError('Нельзя подписаться на себя')
